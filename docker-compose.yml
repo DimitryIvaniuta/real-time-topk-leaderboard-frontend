@@ -1,0 +1,15 @@
+services:
+  leaderboard-frontend:
+    build: .
+    image: real-time-topk-leaderboard-frontend:local
+    ports:
+      - "8088:80"
+    environment:
+      NODE_ENV: production
+    networks:
+      - leaderboard-net
+
+networks:
+  leaderboard-net:
+    name: leaderboard-net
+    external: true
